@@ -22,7 +22,7 @@ if ($count>0) {
     echo json_encode(array("status"=>"error"));
 }
 }else{
-    echo json_encode(array("status"=>"error"));
+    echo json_encode(array("status"=>"error image"));
 }
 
 

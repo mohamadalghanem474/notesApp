@@ -10,7 +10,7 @@ function filterRquest($RequsetName){
 
  function uploadImage($imageRequest){
      global $msgError;
-    $imageName     = $_FILES[$imageRequest]["name"] . rand(1,99999);
+    $imageName     = rand(1,99999).$_FILES[$imageRequest]["name"];
     $imageTmpName  = $_FILES[$imageRequest]["tmp_name"];
     $imageSize     = $_FILES[$imageRequest]["size"];
     $alloweExt     = array("jpg","jpge","png","mp3","pdf","txt");
@@ -30,5 +30,12 @@ function filterRquest($RequsetName){
     }
     else{
         return "error";
+    }
+ }
+
+
+ function deleteFile($dir,$imageName){
+    if (file_exists($dir."/".$imageName)) {
+        unlink($dir."/".$imageName);
     }
  }
